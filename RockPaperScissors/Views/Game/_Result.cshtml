@@ -1,0 +1,21 @@
+﻿@model RockPaperScissors.Models.GameViewModel
+
+<div class="row">
+    <div class="col col-md-3">
+        @if (Model != null && Model.Player1 != null)
+        {
+            <p>Win: @Model.Player1.NumberWins</p>
+            <p>Loss: @Model.Player1.NumberLoss</p>
+            <p>Tie: @Model.Player1.NumberTies</p>
+        }
+    </div>
+
+    <div class="col col-md-3">
+        @if (Model != null && Model.Player2 != null)
+        {
+            <p>Win: @Model.Player2.NumberWins</p>
+            <p>Loss: @Model.Player2.NumberLoss</p>
+            <p>Tie: @Model.Player2.NumberTies</p>
+        }
+    </div>
+</div> 

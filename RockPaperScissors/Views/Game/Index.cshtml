@@ -1,0 +1,54 @@
+﻿@using RockPaperScissors.Enums
+
+@model GameViewModel
+@{
+    ViewData["Title"] = "Game Page";
+}
+
+<div class="container">
+
+    @if (Model.GameType == GameTypeEnumeration.ComputerVersusComputer)
+    {
+            <div class="row">
+                <div class="col col-md-6">
+                    <button onclick="startPlay()">Press to play</button>
+                </div>
+            </div>
+    }
+
+    <div class="row">
+        <div class="col col-md-3">
+            <h2>Player 1</h2>
+            @if (Model.GameType == GameTypeEnumeration.PlayerVersusComputer)
+            {
+                <div class="btn-group-vertical gap-3" id="player1">
+                    <button id="btn-rock" class="btn btn-primary" onclick="onPlayed('rock')">Rock</button>
+                    <button id="btn-paper" class="btn btn-primary" onclick="onPlayed('paper')">Paper</button>
+                    <button id="btn-scissors" class="btn btn-primary" onclick="onPlayed('scissors')">Scissors</button>
+                </div>
+            }
+            else
+            {
+                <div class="btn-group-vertical gap-3" id="player1">
+                    <button id="btn-rock" class="btn btn-primary" disabled>Rock</button>
+                    <button id="btn-paper" class="btn btn-primary" disabled>Paper</button>
+                    <button id="btn-scissors" class="btn btn-primary" disabled>Scissors</button>
+                </div>
+            }
+        </div>
+
+        <div class="col col-md-3">
+            <h2>Player 2</h2>
+            <div class="btn-group-vertical gap-3" id="player2">
+                <button id="btn-rock" class="btn btn-primary" disabled>Rock</button>
+                <button id="btn-paper" class="btn btn-primary" disabled>Paper</button>
+                <button id="btn-scissors" class="btn btn-primary" disabled>Scissors</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row result-view">
+        @Html.Partial("_Result")
+    </div>
+</div>
+

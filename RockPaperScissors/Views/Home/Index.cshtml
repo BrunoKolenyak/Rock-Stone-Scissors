@@ -1,0 +1,33 @@
+﻿@using RockPaperScissors.Enums
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Let's play rock, paper, scissors</p>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col col-md-2">
+            <h1 class="Please, select the game mode"></h1>
+            <div class="btn-group-vertical gap-3">
+                @Html.ActionLink("Player x Computer",
+                                "Index",
+                                "Game",
+                                new { gameType = GameTypeEnumeration.PlayerVersusComputer },
+                                new { @class = "btn btn-primary" })
+
+                @Html.ActionLink("Computer x Computer",
+                                "Index",
+                                "Game",
+                                new { gameType = GameTypeEnumeration.ComputerVersusComputer },
+                                new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+</div>
+
